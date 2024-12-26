@@ -5,7 +5,7 @@ const app = Vue.createApp({
       cpuIndex: 0,
       currentCPUImage: "src/assets/img/rock.png",
       result: "",
-      isStart: false,
+      isFinish: false,
       startMessage: "じゃ～ん　け～ん～",
     };
   },
@@ -14,10 +14,7 @@ const app = Vue.createApp({
       this.intervalId = setInterval(() => {
         this.cpuIndex = (this.cpuIndex + 1) % this.hands.length;
         this.currentCPUImage = `src/assets/img/${this.cpuHand}.png`;
-      }, 500);
-    },
-    playStart() {
-      this.startGame = !this.startGame;
+      }, 200);
     },
     stopCPUCycle() {
       clearInterval(this.intervalId);
@@ -41,6 +38,7 @@ const app = Vue.createApp({
       setTimeout(() => {
         if (userHand === cpuHand) {
           this.result = "引き分け";
+          this.isFinish = false;
           setTimeout(() => {
             this.startCPUCycle();
             this.result = "";
@@ -53,10 +51,22 @@ const app = Vue.createApp({
         ) {
           this.result = "あなたの勝ち！";
           this.showConfetti();
+          setTimeout(() => {
+            this.isFinish = true;
+          }, 700);
         } else {
           this.result = "あなたの負け";
+          setTimeout(() => {
+            this.isFinish = true;
+          }, 500);
         }
       }, 500);
+    },
+    rematch() {
+      this.startMessage = "じゃ～ん　け～ん～";
+      this.startCPUCycle();
+      this.isFinish = "";
+      this.result = "";
     },
   },
   computed: {

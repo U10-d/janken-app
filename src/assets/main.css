@@ -10,6 +10,10 @@ body {
   text-align: center;
 }
 
+.content {
+  padding-top: 50px;
+}
+
 .cpu-hand img {
   width: 150px;
   height: 150px;
@@ -25,16 +29,33 @@ body {
   height: 150px;
   margin: 20px;
   padding: 20px 20px;
-  background-color: white;
+  background-color: #fff;
+  border: solid 3px #000;
   border-radius: 50%;
 }
 
-button.selected {
-  background-color: red;
+.hand-buttons button:hover {
+  background-color: #cacfd2;
+}
+
+.hand-buttons button:active {
+  background-color: #cacfd2;
 }
 
 .result {
   margin-top: 20px;
   font-size: 40px;
   font-weight: bold;
+}
+
+.rematch-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: solid 3px #000;
+  background-color: #fff;
+}
+
+.rematch-button:hover {
+  background-color: #cacfd2;
 }
