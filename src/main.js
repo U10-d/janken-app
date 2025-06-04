@@ -65,7 +65,7 @@ const app = Vue.createApp({
     rematch() {
       this.startMessage = "じゃ～ん　け～ん～";
       this.startCPUCycle();
-      this.isFinish = "";
+      this.isFinish = false;
       this.result = "";
     },
   },
