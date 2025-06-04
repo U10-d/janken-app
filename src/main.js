@@ -6,6 +6,8 @@ const app = Vue.createApp({
       currentCPUImage: "src/assets/img/rock.png",
       result: "",
       isFinish: false,
+      winCount: 0,
+      loseCount: 0,
       startMessage: "じゃ～ん　け～ん～",
     };
   },
@@ -50,12 +52,14 @@ const app = Vue.createApp({
           (userHand === "paper" && cpuHand === "rock")
         ) {
           this.result = "あなたの勝ち！";
+          this.winCount += 1;
           this.showConfetti();
           setTimeout(() => {
             this.isFinish = true;
           }, 700);
         } else {
           this.result = "あなたの負け";
+          this.loseCount += 1;
           setTimeout(() => {
             this.isFinish = true;
           }, 500);

@@ -30,6 +30,7 @@
     </div>
     <div class="result" v-if="result">{{result}}</div>
     <button class="rematch-button" v-if="isFinish" @click="rematch">もう一回！</button>
+    <div class="score">勝：{{ winCount }}　負：{{ loseCount }}</div>
   </div>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
