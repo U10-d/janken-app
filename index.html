@@ -15,15 +15,15 @@
       <img :src="currentCPUImage" :alt="cpuHand">
     </div>
     <div class="hand-buttons">
-      <button @click="playJanken('rock')">
+      <button @click="playJanken('rock')" :disabled="isFinish">
         <img src="src/assets/img/rock.png" alt="グー" class="user-handImg">
         <p class="">グー</p>
       </button>
-      <button @click="playJanken('scissors')">
+      <button @click="playJanken('scissors')" :disabled="isFinish">
         <img src="src/assets/img/scissors.png" alt="チョキ" class="user-handImg">
         <p>チョキ</p>
       </button>
-      <button @click="playJanken('paper')">
+      <button @click="playJanken('paper')" :disabled="isFinish">
         <img src="src/assets/img/paper.png" alt="パー" class="user-handImg">
         <p>パー</p>
       </button>

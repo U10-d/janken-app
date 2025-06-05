@@ -29,6 +29,8 @@ const app = Vue.createApp({
       });
     },
     playJanken(userHand) {
+      if (this.isFinish) return;
+
       this.stopCPUCycle();
 
       const randomIndex = Math.floor(Math.random() * this.hands.length);
