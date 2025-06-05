@@ -22,11 +22,24 @@ const app = Vue.createApp({
       clearInterval(this.intervalId);
     },
     showConfetti() {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { x: 0.5, y: 0.5 },
-      });
+      if (this.winCount % 5 === 0 && this.winCount !== 0) {
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          origin: { x: 0, y: 0.6 },
+        });
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          origin: { x: 1, y: 0.6 },
+        });
+      } else {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { x: 0.5, y: 0.5 },
+        });
+      }
     },
     playJanken(userHand) {
       if (this.isFinish) return;
